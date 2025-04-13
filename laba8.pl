@@ -47,3 +47,28 @@ b_s(X, Y) :-
     dite(P, X),        
     dite(P, Y). 
 
+daughter(X, Y) :-
+    dite(X, Y),
+    woman(Y).
+
+daughter(X) :-
+    dite(X, Child),
+    woman(Child),
+    format('~w - ребенок ~n', [Child]),
+    fail.
+daughter(_). 
+
+husband(X, Y) :-
+    man(X),
+    woman(Y),
+    dite(X, Child),
+    dite(Y, Child),
+    X \= Y.
+
+husband(X) :-
+    woman(X),                 
+    dite(X, Child),          
+    dite(Husband, Child),    
+    man(Husband),              
+    Husband \= X,           
+    format('~w - муж ~w ~n', [Husband]),!. 
