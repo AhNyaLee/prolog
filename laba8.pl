@@ -71,4 +71,20 @@ husband(X) :-
     dite(Husband, Child),    
     man(Husband),              
     Husband \= X,           
-    format('~w - муж ~w ~n', [Husband]),!. 
+    format('~w - муж ~n', [Husband]),!. 
+
+grand_ma(Grandmother, Grandchild) :-
+    woman(Grandmother),
+    grand_mather(Grandmother, Grandchild).
+
+grand_mas(X) :-
+    woman(Grandmother),                  
+    grand_mather(Grandmother, X),    
+    format('~w - бабушка ~w~n', [Grandmother]),
+    fail.                        
+grand_mas(_).
+
+grand_ma_and_da(X, Y) :-
+    (grand_ma(X, Y)    
+    ;                
+    grand_ma(Y, X)).
