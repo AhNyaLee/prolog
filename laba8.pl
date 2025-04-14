@@ -80,7 +80,7 @@ grand_ma(Grandmother, Grandchild) :-
 grand_mas(X) :-
     woman(Grandmother),                  
     grand_mather(Grandmother, X),    
-    format('~w - бабушка ~w~n', [Grandmother]),
+    format('~w - бабушка ~n', [Grandmother]),
     fail.                        
 grand_mas(_).
 
@@ -88,3 +88,16 @@ grand_ma_and_da(X, Y) :-
     (grand_ma(X, Y)    
     ;                
     grand_ma(Y, X)).
+
+aunt(X, Y) :-
+    dite(Parent, Y),         
+    dite(Parent, Sibling),   
+    woman(X),                
+    X \= Sibling.            
+
+all_aunts(X) :-
+    aunt(X, Aunt),
+    woman(Aunt),
+    format('~w - тетя ~n', [Aunt]),
+    fail.
+all_aunts(_).
