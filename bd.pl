@@ -1,4 +1,3 @@
-
 man(oleg).
 man(ivan).
 man(anatoliy).
@@ -16,7 +15,7 @@ woman(sveta).
 woman(zoya).
 woman(katrin).
 
-% Старшее поколение
+
 grand_pather(oleg, ivan).
 grand_mather(lyuba, ivan).
 grand_pather(oleg, galya).
@@ -38,3 +37,7 @@ dite(vlad, zoya).
 dite(vladina, zoya).
 dite(vlad, katrin).
 dite(vladina, katrin).
+
+
+num(100).
+num(50).
