@@ -131,3 +131,4 @@ count_divisors_down(N, D, Acc, Count) :-
     (N mod D =:= 0 -> NewAcc is Acc + 1 ; NewAcc = Acc),
     NextD is D - 1,
     count_divisors_down(N, NextD, NewAcc, Count).
+
